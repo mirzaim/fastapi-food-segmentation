@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-food-seg-coco
+  labels:
+    app: fastapi-food-seg
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fastapi-food-seg
+  template:
+    metadata:
+      labels:
+        app: fastapi-food-seg
+    spec:
+      containers:
+      - name: fastapi-food-seg-coco
+        image: mirzaim/fastapi-food-segmentation:0.6.coco
+        ports:
+        - containerPort: 8000
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "1"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-food-seg-food
+  labels:
+    app: fastapi-food-seg
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fastapi-food-seg
+  template:
+    metadata:
+      labels:
+        app: fastapi-food-seg
+    spec:
+      containers:
+      - name: fastapi-food-seg-food
+        image: mirzaim/fastapi-food-segmentation:0.6.food
+        ports:
+        - containerPort: 8000
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "1"
