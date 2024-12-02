@@ -40,8 +40,8 @@ Requires Python 3.12.
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/mirzaim/yolo-food-segmentation.git
-   cd yolo-food-segmentation
+   git clone https://github.com/mirzaim/fastapi-food-segmentation.git
+   cd fastapi-food-segmentation
    ```
 
 2. Install dependencies:
